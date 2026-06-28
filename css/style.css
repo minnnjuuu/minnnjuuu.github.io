@@ -469,7 +469,6 @@
       width: 3px;
       background: var(--border);
     }
-    .award-item.highlight::before { background: var(--cyan); }
     .award-title {
       font-size: 1rem;
       font-weight: 800;
