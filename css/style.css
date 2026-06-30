@@ -382,6 +382,11 @@
       flex-wrap: wrap;
       gap: 0.375rem;
     }
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+    }
     .project-tag {
       font-size: 0.7rem;
       font-family: 'Fira Code', monospace;
@@ -398,7 +403,14 @@
       font-size: 0.8rem;
       font-weight: 600;
       color: var(--cyan-dark);
+      text-decoration: none;
     }
+    .project-actions .project-link,
+    .project-actions .project-link:hover,
+    .project-actions .project-link:focus {
+      text-decoration: none;
+    }
+    .project-link:hover { color: var(--navy); }
 
     /* ACTIVITIES */
     #activities { background: var(--surface); }
