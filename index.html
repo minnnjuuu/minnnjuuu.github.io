@@ -1,306 +1,36 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="ko" data-theme="yellow">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>minnnjuuu's portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="김민주의 보안과 개발, 그리고 성장 기록">
+  <title>minnnjuuu's Field Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
-<body>
-
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#"><span>minnnjuuu</span>'s portfolio</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#activities">Activities</a></li>
-    <li><a href="#awards">Awards</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <p class="hero-eyebrow">Security Developer & Student</p>
-    <h1>안녕하세요,<br>저는 <span class="accent">김민주</span>입니다.</h1>
-    <p class="hero-subtitle">정보보안 전문가를 꿈꾸는 학생입니다</p>
-
-    <div class="terminal-box">
-      <div class="terminal-bar">
-        <div class="dot dot-r"></div>
-        <div class="dot dot-y"></div>
-        <div class="dot dot-g"></div>
-      </div>
-      <div class="terminal-line">
-        <span class="terminal-prompt">~$</span>
-        <span class="terminal-text" id="typed-text"></span><span class="cursor"></span>
-      </div>
-    </div>
-
-    <div class="hero-ctas">
-      <a href="#projects" class="btn btn-primary">프로젝트 보기 →</a>
-      <a href="https://github.com/minnnjuuu" target="_blank" class="btn btn-outline">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        GitHub
-      </a>
-    </div>
-  </div>
-
-  <div class="scroll-hint">
-    <div class="scroll-arrow"></div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-inner">
-    <p class="section-label">// about</p>
-    <h2 class="section-title">Who I Am</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>안녕하세요! 정보보안 전문가의 꿈을 이루기 위해 끊임없이 노력하는 학생 김민주입니다.</p>
-        <p>웹 해킹과 암호학에 관심이 많으며, 안전한 웹 애플리케이션 개발에 관심을 가지고 있습니다.</p>
-        <div class="tag-list">
-          <span class="tag">Development</span>
-          <span class="tag">Vulnerability Analysis</span>
-          <span class="tag">CTF</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="section-label education-label">// education</p>
-        <div class="edu-list">
-          <div class="edu-item">
-            <div class="edu-school">숭실대학교</div>
-            <div class="edu-dept">산업정보시스템공학과 중퇴</div>
-            <div class="edu-period">2022.03 — 2024.02</div>
-          </div>
-          <div class="edu-item current">
-            <div class="edu-school">서울시립대학교</div>
-            <div class="edu-dept">컴퓨터과학부 재학</div>
-            <div class="edu-period">2024.03 — 현재</div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-inner">
-    <p class="section-label">// projects</p>
-    <h2 class="section-title">What I've Built</h2>
-    <div class="projects-grid">
-
-      <a href="https://github.com/minnnjuuu/AICOSS" target="_blank" class="project-card">
-        <div class="project-media project-media-aibti">
-          <img src="img/aibti.png" alt="AIBTI 프로젝트 화면" loading="lazy" />
-        </div>
-        <div class="project-name">너 MBTI말고 AIBTI해봤어?</div>
-        <div class="project-desc">AICOSS 서포터즈에서 AI 기반의 마이크로디그리 추천 서비스를 개발하여 대학교 축제에서 부스를 운영했습니다.</div>
-        <div class="project-tags">
-          <span class="project-tag">Web</span>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Flask</span>
-        </div>
-        <div class="project-link">GitHub에서 보기 →</div>
-      </a>
-
-      <div class="project-card">
-        <div class="project-media">
-          <img src="img/sha.png" alt="SHA 홈페이지 화면" loading="lazy" />
-        </div>
-        <div class="project-name">SHA Homepage</div>
-        <div class="project-desc">서울시립대 컴퓨터과학부 보안 소모임 SHA의 공식 홈페이지를 기획·개발을 주도했습니다.</div>
-        <div class="project-tags">
-          <span class="project-tag">Web</span>
-          <span class="project-tag">React</span>
-          <span class="project-tag">Node.js</span>
-        </div>
-        <div class="project-actions">
-          <a href="https://github.com/minnnjuuu/SHA-Homepage" target="_blank" rel="noopener noreferrer" class="project-link">GitHub에서 보기 →</a>
-          <a href="https://uos-sha.github.io/SHA-homepage/" target="_blank" rel="noopener noreferrer" class="project-link">배포 링크 보기 →</a>
-        </div>
-      </div>
-
-      <a href="https://github.com/minnnjuuu/DevGuardZone" target="_blank" class="project-card">
-        <div class="project-media project-media-devguard">
-          <img src="img/devguardzoneMain.png" alt="DevGuardZone 프로젝트 화면" loading="lazy" />
-        </div>
-        <div class="project-name">DevGuardZone</div>
-        <div class="project-desc">2024 컴과 셈틀제 출품작으로 개발자를 위한 보안 취약점 탐지 및 시큐어 코딩 가이드 플랫폼을 만들었습니다.</div>
-        <div class="project-tags">
-          <span class="project-tag">Security</span>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Secure Coding</span>
-        </div>
-        <div class="project-link">GitHub에서 보기 →</div>
-      </a>
-
-      <div class="project-card project-card-static">
-        <div class="project-media">
-          <img src="img/runactf.png" alt="Runa CTF 프로젝트 화면" loading="lazy" />
-        </div>
-        <div class="project-name">Runa CTF</div>
-        <div class="project-desc">서울시립대 비교과 프로그램 나비스트 프로젝트(정보·기술활용 분야) — UOSec팀에 속하여 교내 모의 해킹 대회 기획 및 운영·문제 출제부터 진행까지 직접 주도했습니다.</div>
-        <div class="project-tags">
-          <span class="project-tag">CTF</span>
-          <span class="project-tag">Security</span>
-        </div>
-        <div class="project-link project-link-muted">비공개 프로젝트</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ACTIVITIES -->
-<section id="activities">
-  <div class="section-inner">
-    <p class="section-label">// activities</p>
-    <h2 class="section-title">Experience & Community</h2>
-    <div class="activity-list">
-
-      <div class="activity-item">
-        <div class="activity-period">2026.06 — 현재</div>
-        <div>
-          <div class="activity-name">화이트햇 스쿨 4기 <span class="badge badge-blue">진행 중</span></div>
-          <div class="activity-role">화이트햇 해킹 심화 교육 과정 참여</div>
-        </div>
-      </div>
-
-      <div class="activity-item">
-        <div class="activity-period">2025.03 — 2026.02</div>
-        <div>
-          <div class="activity-name">UOS AICOSS 서포터즈</div>
-          <div class="activity-role">서울시립대 인공지능혁신융합대학사업단 AICOSS 서포터즈 활동</div>
-        </div>
-      </div>
-
-      <div class="activity-item">
-        <div class="activity-period">2024.05 — 2026.02</div>
-        <div>
-          <div class="activity-name">서울시립대 보안소모임 SHA 소모임장</div>
-          <div class="activity-role">컴퓨터과학부 보안 소모임 운영</div>
-        </div>
-      </div>
-
-      <div class="activity-item">
-        <div class="activity-period">2024.07 — 2024.10</div>
-        <div>
-          <div class="activity-name">ELITE WHITE HACKER Bootcamp 2기 <span class="badge">우수수료</span></div>
-          <div class="activity-role">KnockOn에서 진행한 실전형 화이트해커 양성과정 우수 수료</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- AWARDS -->
-<section id="awards">
-  <div class="section-inner">
-    <p class="section-label">// awards</p>
-    <h2 class="section-title">Recognition</h2>
-
-    <div class="award-list">
-      <div class="award-item">
-        <div class="award-year">2026</div>
-        <div>
-          <div class="award-title">대구·경북 사이버공격 방어대회 2026 Final</div>
-          <div class="award-meta">일반 부문 · Team 샤갈의 마을은 회기에 있다</div>
-          <div class="award-desc">대구·경북 사이버보안 심포지엄 2026과 함께 열린 공격·방어형 보안 대회 일반 부문 본선에 Finalist로 참여했습니다.</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-year">2026</div>
-        <div>
-          <div class="award-title">DEF CON 34 CTF Qualifier 6등</div>
-          <div class="award-meta">Team Jinddabi's</div>
-          <div class="award-desc">DEF CON CTF 본선 진출팀을 선발하는 예선에서 6위라는 성적을 기록했습니다.</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-year">2026</div>
-        <div>
-          <div class="award-title">Azure Assassin Alliance CTF 2026 1등</div>
-          <div class="award-meta">Team dda_com</div>
-          <div class="award-desc">Zhejiang University Team AAA가 주최한 XCTF League 파트너 온라인 Jeopardy-style CTF에 참가했습니다.</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-year">2026</div>
-        <div>
-          <div class="award-title">DiceCTF 2026 Quals 5등</div>
-          <div class="award-meta">Team dda.com</div>
-          <div class="award-desc">DiceGang이 운영하는 국제 CTF 예선에서 Open Division 결선권 경쟁에서 5위에 해당하는 성적을 기록했습니다.</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-year">2026</div>
-        <div>
-          <div class="award-title">BITS CTF 2026 1등</div>
-          <div class="award-meta">Team 따따</div>
-          <div class="award-desc">BITSkrieg가 주최한 48시간 Jeopardy-style CTF에서 1위를 기록했습니다.</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-year">2025</div>
-        <div>
-          <div class="award-title">Black Hat MEA CTF 2025 Final</div>
-          <div class="award-meta">Team Lunar</div>
-          <div class="award-desc">Black Hat MEA 현장에서 진행된 국제 CTF 결선에 Finalist로 참여했습니다.</div>
-        </div>
-      </div>
-
-      <div class="award-item">
-        <div class="award-year">2024</div>
-        <div>
-          <div class="award-title">2024 UOSPC 장려상</div>
-          <div class="award-desc">서울시립대학교 프로그래밍 경진대회에서 알고리즘 문제 해결 능력을 겨루어 장려상을 수상했습니다.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-inner">
-    <p class="section-label">// contact</p>
-    <h2 class="section-title">Get In Touch</h2>
-    <p class="contact-desc">협업이나 프로젝트 관련 문의는 언제든지 환영합니다.</p>
-    <div class="contact-links">
-      <a href="https://github.com/minnnjuuu" target="_blank" class="contact-btn contact-btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        GitHub @minnnjuuu
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 <span>김민주 (minnnjuuu)</span>. All rights reserved.</p>
-</footer>
-  <script src="js/script.js"></script>
+<body id="top">
+  <div class="paper-margin" aria-hidden="true"></div>
+  <header class="header wrap">
+    <a href="#top" class="brand"><img src="img/ver2/notebook-logo.svg" alt="" width="30" height="34"><span><strong>minnnjuuu</strong><small>minnnjuuu.github.io</small></span></a>
+    <div class="themes" aria-label="노트 색상 선택"><button type="button" data-theme-choice="white" aria-pressed="false"><i></i> 흰 노트</button><button type="button" data-theme-choice="yellow" aria-pressed="true"><i></i> 노란 노트</button></div>
+  </header>
+  <main class="wrap">
+    <section class="cover" aria-labelledby="cover-title">
+      <div class="intro"><p class="eyebrow">KIM MINJU / SECURITY &amp; DEVELOPMENT</p><h1 id="cover-title"><span>minnnjuuu’s</span>FIELD NOTES.</h1><p class="highlight">김민주의 성장기록장</p><p class="intro-copy">웹 보안을 탐구하고, 아이디어를 코드로 만듭니다.<br>배운 것과 만든 것, 그 사이의 시행착오를 기록합니다.</p><div class="actions"><a class="button primary" href="#work">프로젝트 펼쳐보기 ↗</a><a class="button" href="#about">나를 소개할게요 ↓</a></div><p class="motto">Keep learning, keep growing.</p></div>
+      <aside class="desk"><div class="desk-head"><strong>today’s desk</strong><time id="today"></time></div><div class="desk-content"><h2>오늘의 할 일</h2><p>작은 것부터 하나씩.</p><div class="tasks"><label><input type="checkbox"><span>보안 아티클 읽기</span></label><label><input type="checkbox"><span>CTF 한 문제 풀기</span></label><label><input type="checkbox" checked><span>스스로에게 잘하고 있다고 칭찬해주기</span></label><label><input type="checkbox"><span>오늘 배운 것 기록하기</span></label></div><p class="desk-motto">a little progress, every day.</p></div></aside>
+    </section>
+    <nav class="index" aria-label="목차"><a href="#about"><b>01</b><span><strong>Me log</strong><small>나를 소개하는 메모</small></span></a><a href="#work"><b>02</b><span><strong>Project drawer</strong><small>직접 만든 프로젝트</small></span></a><a href="#growth"><b>03</b><span><strong>Yearly TMI</strong><small>그해의 소소한 뒷이야기</small></span></a><a href="#competitions"><b>04</b><span><strong>Competition records</strong><small>대회에서 남긴 기록</small></span></a><a href="#research"><b>05</b><span><strong>Research notes</strong><small>취약점 분석 기록</small></span></a><a href="#contact"><b>06</b><span><strong>Contact</strong><small>다음 기록을 함께</small></span></a></nav>
+    <section id="about" class="section"><div class="section-heading"><div class="section-meta"><span>01 / ME LOG</span><span>PAGE 01</span></div><h2>작은 호기심을, 직접 해보는 일로.</h2></div><div class="about-grid"><article class="profile"><div class="profile-head"><h3>WHO I AM</h3><small>#001</small></div><dl><div><dt>NAME</dt><dd>김민주</dd></div><div><dt>HANDLE</dt><dd>minnnjuuu</dd></div><div><dt>SCHOOL</dt><dd>서울시립대 컴퓨터과학부</dd></div><div><dt>FOCUS</dt><dd>Web · Bug bounty<br>CTF · AI</dd></div></dl><div class="signature"><span>minnnjuuu</span><small>KEEP LEARNING<br>KEEP BUILDING</small></div></article><div class="activity-grid"><article class="note sky"><small>2024.07 — 10</small><h3>ELITE WHITE HACKER</h3><p>Bootcamp 2기 우수수료</p><span class="tag">교육</span></article><article class="note lime"><small>2025.03 — 2026.02</small><h3>UOS AICOSS</h3><p>서울시립대학교 인공지능혁신융합대학<br>서포터즈</p><span class="tag">커뮤니티</span></article><article class="note peach"><small>2024.05 — present</small><h3>SHA</h3><p>2024, 2025 소모임장<br>2026 운영진</p><span class="tag">운영</span></article><article class="note lilac"><small>2026.06 — present</small><h3>화이트햇 스쿨 4기</h3><p>한국인터넷진흥원(KISA)이 운영하는<br>정보보안 인재 양성 교육</p><span class="tag">보안</span></article></div></div></section>
+    <section id="work" class="section"><div class="section-heading"><div class="section-meta"><span>02 / PROJECT DRAWER</span><span>PAGE 02</span></div><h2>만들고, 부딪히고, 남긴 것들.</h2></div><div class="project-grid" id="projects"></div></section>
+    <section id="growth" class="section"><div class="section-heading"><div class="section-meta"><span>03 / YEARLY TMI</span><span>PAGE 03</span></div><h2>어쩌다 보니, 여기까지.</h2></div><div class="year-heading"><h3 id="year-title">2026의 TMI</h3><div class="year-tabs" role="tablist" aria-label="연도별 이야기"><button role="tab" data-year="2022">2022</button><button role="tab" data-year="2023">2023</button><button role="tab" data-year="2024">2024</button><button role="tab" data-year="2025">2025</button><button role="tab" data-year="2026" aria-selected="true">2026</button></div></div><div class="year-content" id="year-content" role="tabpanel"></div></section>
+    <section id="competitions" class="section"><div class="section-heading"><div class="section-meta"><span>04 / COMPETITION RECORDS</span><span>PAGE 04</span></div><h2>대회에서 남긴 기록.</h2></div><div id="records" class="records"></div><details class="more-records"><summary>참가한 대회 더 보기 <span>↓</span></summary><h3>그 밖의 참가 기록</h3><div id="additional-records"></div></details></section>
+    <section id="research" class="section"><div class="section-heading"><div class="section-meta"><span>05 / RESEARCH NOTES</span><span>PAGE 05</span></div><h2>취약점을 읽고, 분석을 남깁니다.</h2></div><div class="research-grid"><a href="https://www.cve.org/CVERecord?id=CVE-2026-47193" target="_blank" rel="noopener noreferrer"><div><small>ANALYSIS / CREDIT</small><span>↗</span></div><h3>CVE-2026-47193</h3><footer><span>Analyst</span><span>크레딧 보기</span></footer></a><a href="https://www.cve.org/CVERecord?id=CVE-2026-52779" target="_blank" rel="noopener noreferrer"><div><small>ANALYSIS / CREDIT</small><span>↗</span></div><h3>CVE-2026-52779</h3><footer><span>Analyst</span><span>크레딧 보기</span></footer></a></div></section>
+    <section id="contact" class="contact"><div><p class="eyebrow">06 / NEXT PAGE</p><h2>다음 기록은, 함께 만들어도 좋아요.</h2><p>프로젝트, 보안, 그리고 새로운 아이디어 이야기.</p></div><a class="button primary" href="https://github.com/minnnjuuu" target="_blank" rel="noopener noreferrer">GitHub ↗</a></section>
+  </main>
+  <footer class="footer wrap"><span>© 2026 KIM MINJU / minnnjuuu</span><span>YELLOW NOTEBOOK / FIELD NOTES</span><a href="#top">맨 위로 ↑</a></footer>
+  <nav class="side-tabs" aria-label="섹션 바로가기"><a href="#about">me</a><a href="#work">work</a><a href="#growth">tmi</a><a href="#competitions">score</a><a href="#research">cve</a><a href="#contact">hi</a></nav>
 </body>
 </html>

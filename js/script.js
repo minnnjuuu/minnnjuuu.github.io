@@ -1,44 +1,32 @@
-// Terminal typing animation
-  const lines = [
-    'whoami → 김민주',
-    'cat interests.txt→[Dev, Web Hacking, Crypto]',
-  ];
-  let lineIdx = 0, charIdx = 0;
-  const el = document.getElementById('typed-text');
-
-  function type() {
-    if (charIdx < lines[lineIdx].length) {
-      el.textContent += lines[lineIdx][charIdx++];
-      setTimeout(type, 45);
-    } else {
-      setTimeout(erase, 2000);
-    }
-  }
-  function erase() {
-    if (el.textContent.length > 0) {
-      el.textContent = el.textContent.slice(0, -1);
-      setTimeout(erase, 20);
-    } else {
-      lineIdx = (lineIdx + 1) % lines.length;
-      charIdx = 0;
-      setTimeout(type, 400);
-    }
-  }
-  type();
-
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.project-card, .activity-item, .award-item, .edu-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
+const projects = [
+ ['sky','AI · WEB','AIBTI','UOS AICOSS 활동에서 진행한 AI 추천 설문 프로젝트.\n질문과 응답을 바탕으로 추천 경험을 구현했습니다.',['OpenAI'],'https://github.com/minnnjuuu/AICOSS'],
+ ['peach','COMMUNITY · WEB','SHA-homepage','서울시립대 보안 소모임 SHA의 공식 홈페이지.\n활동과 소식을 한곳에 모으고 공유하는 웹사이트입니다.',['Web','Community','운영'],'https://github.com/minnnjuuu/SHA-Homepage'],
+ ['mint','SECURITY · LEARNING','DevGuardZone','2024 컴퓨터과학부 학술제 ‘셈틀제’ 출품작.\n웹 보안과 시큐어 코딩을 학습·실습하는 프로젝트입니다.',['SecureCoding','Web'],'https://github.com/minnnjuuu/DevGuardZone'],
+ ['lilac','CTF · OPERATIONS','Runa CTF','2025 나비스트 프로젝트 ‘UOSec’ 팀으로 진행한 CTF.\n문제 기획과 출제부터 대회 운영까지 함께했습니다.',['CTF','문제 기획','운영'],null,'비공개 프로젝트'],
+ ['plain','AI · SECURITY RESEARCH','AutoMedic','화이트햇 스쿨 4기 2단계 프로젝트 · 팀 AutoMedic.\nAI를 활용한 취약점 자동 수정 연구.\n논문 투고 준비 중으로 세부 내용은 비공개입니다.',['AI','Security'],null,'논문 투고 준비 중 · 상세 비공개'],
+ ['lime','SHA × 도어락 · ESCAPE ROOM CTF','방탈출 CTF','SHA와 도어락이 함께 기획·운영한 방탈출 CTF.\n현장 추리와 보안 문제 풀이를 연결해,\n암호와 보안의 진입장벽을 낮추고자 했습니다.',['CTF','행사 기획','운영'],null,'비공개 프로젝트']
+];
+const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const lines = value => escapeHtml(value).replace(/\n/g,'<br>');
+document.querySelector('#projects').innerHTML = projects.map(([color,label,title,description,tags,url,status],index) => {
+ const number=String(index+1).padStart(2,'0');
+ const content=`<span class="folder-tab">${number} / PROJECT FILE</span><div class="folder-body"><div class="folder-top"><span class="folder-label">${escapeHtml(label)}</span>${url?'<span class="arrow">↗</span>':''}</div><h3>${escapeHtml(title)}</h3><p>${lines(description)}</p><div class="tags">${tags.map(tag=>`<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div><div class="folder-footer"><span>PROJECT NOTE / ${number}</span><span>${status || '기록 펼쳐보기 ↗'}</span></div></div>`;
+ return url ? `<a class="project ${color}" href="${url}" target="_blank" rel="noopener noreferrer">${content}</a>` : `<article class="project ${color}">${content}</article>`;
+}).join('');
+const years = {
+ 2022:['포인트와 상금 노리다가,\n보안에 입문해버림.',[['첫 보안은 교내 CTF였다.','2022년 겨울, 숭실대 교내 CTF에서 처음 보안을 접했다.\nBeginner 부문이 있어서 나도 참가할 수 있었다.'],['참가 동기? 꽤 솔직한 편.','비교과 포인트도 올리고, 상금도 한번 받아보고 싶었다.\n처음부터 거창한 목표가 있었던 건 아니다. ㅎㅎ'],['그런데 이거, 재밌네?','가벼운 마음으로 참가한 대회에서 보안에 흥미가 생겼다.\n포인트와 상금을 노리다가, 더 공부해보고 싶은 분야가 생긴 셈.']]],
+ 2023:['동아리는 떨어졌고,\n플랜은 두 개가 됐다.',[['보안은 계속하고 싶었는데','숭실대 산업정보시스템공학과 2학년. 보안을 계속 공부하고 싶어서\n해킹동아리 ASC에 지원했는데, 대차게 떨어졌다.'],['플랜 B까지 같이 준비함.','전과 하나만 믿고 기다릴 수는 없어서,\n전과 준비와 수시 논술 반수 준비를 함께 했다.'],['둘 다 됐고, 시립대를 골랐다.','전과도, 서울시립대 합격도 둘 다 됐다.\n두 선택지 중 내가 고른 건 시립대였다.'],['어쩌면, 그 면접 덕분일지도.','ASC 면접에서 내가 얼마나 모르는지 실감했다.\n그때 받은 자극이 지금의 나를 만든 계기였을지도 모르겠다.']]],
+ 2024:['보안 공부하러 왔다가,\n소모임까지 만들어버림.',[['왜 시립대로 왔냐면','보안을 공부하고 싶어서.\n숭실대를 자퇴하고, 시립대에서 새로 시작했다.'],['없으면… 내가 만들지.','보안 소모임이 없었다. 같이 공부할 곳이 필요해서,\n직접 SHA를 만들었다.'],['의욕은 있는데, 경험은 처음.','모든 게 처음인데 내가 이끌어야 한다니, 부담이 컸다.\n그래도 잘해내고 싶었다. 시작한 만큼 제대로.'],['극극극 I인데, 먼저 연락하는 사람이 됨.','정말 극극극 I인데, 어쩌다 보니 모르는 사람들에게도 먼저 연락하게 됐다.\n낯선 사람에게 연락하는 일이 계속되니, 솔직히 정말 힘들었다.']]],
+ 2025:['자신감은 꺾였지만,\n시야는 더 넓어졌다.',[['시작부터, 대차게 탈락.','화이트햇 스쿨 3기에 떨어지면서 2025년을 시작했다.\n시작부터 자신감이 확 떨어졌다.'],['다들 성장하는데, 나만 제자리?','주변 사람들은 다들 성장하는 것처럼 보였다.\n나는 혼자 제자리에 머물러 있는 것 같아서, 자신감이 더 떨어졌다.'],['어쩌다 보니, 사우디까지.','Black Hat MEA Final에 참가하러 사우디아라비아에 가게 됐다.\n큰 활약을 한 건 아니지만, 정말 열심히 하는 사람들을 가까이서 봤다.'],['다시, 더 열심히 해보고 싶어졌다.','그 모습을 보며 자극을 받았고, 시야도 한층 넓어졌다.\n나도 더 성장하고, 더 열심히 해보겠다는 마음을 다시 다졌다.']]],
+ 2026:['더 바쁘게, 더 열심히.\n아직 써 내려가는 중.',[['이번엔 합격. 화이트햇 스쿨 4기!','작년에 떨어졌던 화이트햇 스쿨에, 이번에는 4기로 합격했다.\n올해는 교육생으로 함께하며 보안 공부를 이어가고 있다.'],['올해는 DEF CON까지.','DEF CON에도 다녀왔다. 올해의 경험 목록에 또 하나가 추가됐다.\n배우고, 만들고, 직접 가보는 일로 한 해를 채우는 중이다.'],['공부도 하고, 대회도 열고.','SHA와 도어락이 함께 전국 대학생 대상 방탈출 CTF를 진행했다.\n직접 기획하고 운영하며, 보안을 재미있게 경험할 자리를 만들었다.'],['2026년, 아직 마침표는 없음.','돌아보면 올해는 더 열심히 살고 있는 것 같다. 정말 바쁜 한 해지만,\n아직 끝난 이야기는 아니다. 지금도 2026년을 써 내려가는 중.']]]
+};
+function showYear(year){const [summary,stories]=years[year];const [first,second]=summary.split('\n');document.querySelector('#year-title').textContent=`${year}의 TMI`;document.querySelector('#year-content').innerHTML=`<div class="year-summary"><p>${year}의 한 줄 요약</p><h4>${escapeHtml(first)}<br><span>${escapeHtml(second)}</span></h4></div><div>${stories.map(([title,body],i)=>`<article class="story"><small>${String(i+1).padStart(2,'0')}</small><div><h4>${escapeHtml(title)}</h4><p>${escapeHtml(body)}</p></div></article>`).join('')}</div>`;document.querySelectorAll('[data-year]').forEach(button=>{const selected=button.dataset.year===String(year);button.setAttribute('aria-selected',selected);button.tabIndex=selected?0:-1})}
+document.querySelectorAll('[data-year]').forEach(button=>button.addEventListener('click',()=>showYear(button.dataset.year)));document.querySelector('.year-tabs').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight'].includes(event.key))return;event.preventDefault();const buttons=[...document.querySelectorAll('[data-year]')];const current=buttons.indexOf(document.activeElement);const next=buttons[(current+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length];next.focus();showYear(next.dataset.year)});showYear(2026);
+const records=[
+ ['2026','HITCON CTF','Team SHASHASHAK','웹·암호·리버싱 등 다양한 분야를 겨루는 48시간 온라인 CTF.','25위'],['2026','Black Hat MEA qual','Team SHASHASHAK','Black Hat MEA CTF 결선 진출을 겨루는 예선 대회.','40위'],['2026','KISIA Final','Team 도어락','한국정보보호산업협회가 운영하는 CTF 방식의 보안 경진대회.','18위'],['2026','DEF CON 34 Final',"Team Jinddabi's",'DEF CON 현장에서 세계 각국 팀과 해킹 실력을 겨루는 국제 대회.','7위'],['2026','Sekai CTF',"Team Jinddabi's",'Project Sekai가 개최하는 다양한 분야의 온라인 CTF.','7위'],['2026','대구·경북 사이버공격 방어대회 Final','Team 샤갈의 마을은 회기에 있다','일반 부문 · 대구·경북 사이버보안 심포지엄과 함께 진행된 보안 대회 본선.','15위'],['2026','SCTF','Team dda_com','Syclover가 개최하는 XCTF 국제 리그 연계 온라인 보안 대회.','1위'],['2026','HyperSonic CTF','Team SHA','HyperSonic 팀이 출제·운영하는 클럽 단위 보안 대회.','5위'],['2026','ACTF','Team dda_com','Zhejiang University AAA 팀이 개최하는 XCTF 국제 리그 연계 대회.','1위'],['2026','DiceCTF qual','Team dda.com','DiceGang이 개최하는 국제 CTF의 온라인 예선.','5위'],['2026','BITS CTF','Team 따따','인도 BITS Pilani의 BITSkrieg가 개최하는 온라인 CTF.','1위'],['2025','Black Hat MEA Final','Team Lunar','사우디아라비아 Black Hat MEA 현장에서 진행되는 국제 CTF 결선.','본선 참가'],['2024','UOSPC','','알고리즘 문제 해결 능력을 겨루는 서울시립대학교 프로그래밍 경진대회.','장려상']
+];
+document.querySelector('#records').innerHTML=records.map(([year,title,team,description,result])=>`<article class="record"><span class="record-year">${year}</span><div><h3 class="${/[가-힣]/.test(title)?'korean':''}">${escapeHtml(title)}</h3>${team?`<p class="team">${escapeHtml(team)}</p>`:''}<p>${escapeHtml(description)}</p></div><div class="result"><span>${escapeHtml(result)}</span></div></article>`).join('');
+const more=[['2026','제2회 영남사이버공격방어대회','11위'],['2026','HSPACE Space War · WEB','5위'],['2026','ASIS CTF qual','16위'],['2026','CCE qual','21위'],['2026','Dreamhack CTF S8 Round #5 · All-Round','15위'],['2026','Midnight Sun CTF qual','11위'],['2026','HackTheon qual','38위'],['2026','Dreamhack CTF S8 Round #3 · Rev','28위'],['2026','HSPACE Space War · AI','23위'],['2026','CODEGATE qual','13위'],['2026','제5회 HCTF','35위'],['2026','INC0GNITO FESTIVAL CTF qual','38위'],['2025','HolyShield 2025','참가'],['2025','SecureXchallenge','참가']];
+document.querySelector('#additional-records').innerHTML=more.map(row=>`<div class="extra-record">${row.map(value=>`<span>${escapeHtml(value)}</span>`).join('')}</div>`).join('');
+function updateDate(){const now=new Date();const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',weekday:'short'}).formatToParts(now);const get=type=>parts.find(part=>part.type===type).value;const date=`${get('year')}.${get('month')}.${get('day')}`;const el=document.querySelector('#today');el.textContent=`${date} · ${get('weekday').toUpperCase()}`;el.dateTime=date.replaceAll('.','-')};updateDate();setInterval(updateDate,60000);
+document.querySelectorAll('[data-theme-choice]').forEach(button=>button.addEventListener('click',()=>{const theme=button.dataset.themeChoice;document.documentElement.dataset.theme=theme;document.querySelectorAll('[data-theme-choice]').forEach(item=>item.setAttribute('aria-pressed',item===button));document.querySelector('.footer span:nth-child(2)').textContent=`${theme.toUpperCase()} NOTEBOOK / FIELD NOTES`}));
