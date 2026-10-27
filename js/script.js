@@ -1,5 +1,5 @@
 const projects = [
- ['sky','AI · WEB','AIBTI','UOS AICOSS 활동에서 진행한 AI 추천 설문 프로젝트.\n질문과 응답을 바탕으로 추천 경험을 구현했습니다.',['OpenAI'],'https://github.com/minnnjuuu/AICOSS'],
+ ['sky','AI · WEB','AIBTI','UOS AICOSS 활동에서 진행한 AI 추천 설문 프로젝트.\n설문 응답을 바탕으로 AICOSS 마이크로디그리 과정을 추천합니다.',['OpenAI'],'https://github.com/minnnjuuu/AICOSS'],
  ['peach','COMMUNITY · WEB','SHA-homepage','서울시립대 보안 소모임 SHA의 공식 홈페이지.\n활동과 소식을 한곳에 모으고 공유하는 웹사이트입니다.',['Web','Community','운영'],'https://github.com/minnnjuuu/SHA-Homepage'],
  ['mint','SECURITY · LEARNING','DevGuardZone','2024 컴퓨터과학부 학술제 ‘셈틀제’ 출품작.\n웹 보안과 시큐어 코딩을 학습·실습하는 프로젝트입니다.',['SecureCoding','Web'],'https://github.com/minnnjuuu/DevGuardZone'],
  ['lilac','CTF · OPERATIONS','Runa CTF','2025 나비스트 프로젝트 ‘UOSec’ 팀으로 진행한 CTF.\n문제 기획과 출제부터 대회 운영까지 함께했습니다.',['CTF','문제 기획','운영'],null,'비공개 프로젝트'],
